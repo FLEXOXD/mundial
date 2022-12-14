@@ -34,6 +34,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <!-- CRUD PARA SELECCIONES -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                   aria-expanded="false">Selecciones<span class="caret"></span>
@@ -43,6 +44,7 @@
               <li><a href="<?php echo site_url('selecciones/nuevo');?>">Nuevo</a></li>
             </ul>
           </li>
+          <!-- CRUD PARA PAISES -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                   aria-expanded="false">Paises<span class="caret"></span>
@@ -52,6 +54,7 @@
               <li><a href="<?php echo site_url('paises/nuevo');?>">Nuevo</a></li>
             </ul>
           </li>
+          <!-- CRUD PARA JUGADORES -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                   aria-expanded="false">Jugadores<span class="caret"></span>
@@ -61,6 +64,7 @@
               <li><a href="<?php echo site_url('jugadores/nuevo');?>">Nuevo</a></li>
             </ul>
           </li>
+          <!-- CRUD PARA DIRECTORES -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                   aria-expanded="false">Directores<span class="caret"></span>
