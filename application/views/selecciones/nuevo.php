@@ -2,13 +2,13 @@
   <i class="glyphicon glyphicon-plus"></i>
   NUEVA SELECCIÓN
 </legend>
-<form class="" action="<?php echo site_url('selecciones/guardarSeleccion'); ?>" method="post">
+<form  id="frm_nuevo_seleccion" class="" enctype="multipart/form-data" action="<?php echo site_url('selecciones/guardarSeleccion'); ?>" method="post">
     <div class="row">
       <div class="col-md-4 text-right">
         <label for="">NOMBRE:</label>
       </div>
     <div class="col-md-7">
-        <input type="text" name="nombre_selec_md" value="" class="form-control" placeholder="Ingrese el nombre" required>
+        <input type="text" id="nombre_selec_md" name="nombre_selec_md" value="" class="form-control" placeholder="Ingrese el nombre">
       </div>
     </div>
     <br>
@@ -17,7 +17,7 @@
         <label for="">DESCRIPCIÓN:</label>
       </div>
     <div class="col-md-7">
-        <input type="text" name="descripcion_selec_md" value="" class="form-control" placeholder="Ingrese la descripción" required>
+        <input type="text" id="descripcion_selec_md" name="descripcion_selec_md" value="" class="form-control" placeholder="Ingrese la descripción">
       </div>
     </div>
     <br>
@@ -30,3 +30,27 @@
       </div>
     </div>
 </form>
+<script type="text/javascript">
+$("#frm_nuevo_seleccion").validate({
+  rules:{
+    nombre_selec_md:{
+      required:true,
+      minlength:3
+    },
+    descripcion_selec_md:{
+      required:true,
+      minlength:3
+    }
+  },
+  messages:{
+    nombre_selec_md:{
+      required:"Por favor complete el nombre ",
+      minlength:"Nombre incorrecto"
+    },
+    descripcion_selec_md:{
+      required:"Por favor complete la descripcion",
+      minlength:"Descripcion incorrecta"
+      }
+    }
+});
+</script>

@@ -12,6 +12,8 @@
     <li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
 		<li data-target="#myCarousel" data-slide-to="4"></li>
+		<li data-target="#myCarousel" data-slide-to="5"></li>
+		<li data-target="#myCarousel" data-slide-to="6"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -23,7 +25,9 @@
     <div class="item">
       <img src="<?php echo base_url();?>/assets/images/5.jpg" height="250px" width="1850px">
     </div>
-
+		<div class="item">
+      <img src="<?php echo base_url();?>/assets/images/6.jpg" height="250px" width="1850px">
+    </div>
     <div class="item">
       <img src="<?php echo base_url();?>/assets/images/3.jpg" height="250px" width="1850px">
     </div>

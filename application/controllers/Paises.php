@@ -28,18 +28,20 @@ class Paises extends CI_Controller {
 		);
 		print_r($datosNuevoPais);
 		if ($this->pais->insertar($datosNuevoPais)) {
-			redirect('paises/index');
-		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('confirmacion','Pais insertado exitosamente');
+	}else{
+			$this->session->set_flashdata('error','Error al insertar, verifique e intente de nuevo');
 		}
+		redirect('paises/index');
 	}
 	//Función para eliminar paises
 	public function borrar($id_pa_md){
 		if ($this->pais->eliminarPorId($id_pa_md)){
-			redirect('paises/index');
-		} else {
-			echo "Error al eliminar :(";
+			$this->session->set_flashdata('confirmacion','Pais ELIMINADO exitosamente');
+	} else {
+			$this->session->set_flashdata('error','Error al eliminar, verifique e intente de nuevo');
 		}
+		redirect('paises/index');
 	}
 	//Función para renderizar formulario de actualización
 	public function actualizar($id){

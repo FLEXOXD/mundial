@@ -13,6 +13,43 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Importación de Jquery Validate -->
+    <script type="text/javascript" src="<?php echo base_url('assets/librerias/validate/jquery.validate.min.js'); ?>"></script>
+    <!-- Importación de Jquery additional methods -->
+    <script type="text/javascript" src="<?php echo base_url('assets/librerias/validate/additional-methods.min.js'); ?>"></script>
+    <!-- Importación de Jquery messages_es -->
+    <script type="text/javascript" src="<?php echo base_url('assets/librerias/validate/messages_es_AR.min.js'); ?>"></script>
+    <!-- Importación de dataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <!-- Importación SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.15/sweetalert2.css" integrity="sha512-JzSVRb7c802/njMbV97pjo1wuJAE/6v9CvthGTDxiaZij/TFpPQmQPTcdXyUVucsvLtJBT6YwRb5LhVxX3pQHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.15/sweetalert2.js" integrity="sha512-9V+5wAdU/RmYn1TP+MbEp5Qy9sCDYmvD2/Ub8sZAoWE2o6QTLsKx/gigfub/DlOKAByfhfxG5VKSXtDlWTcBWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- En caso de no funcionar debajo de la importación, colocar antes del </body> en footer -->
+    <!-- CONFIRMACIÓN -->
+    <?php if ($this->session->flashdata('confirmacion')): ?>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          Swal.fire(
+            'CONFORMACIÓN',
+            'Jugador guardado exitosamente',
+            'success'
+          )
+        });
+      </script>
+    <?php endif; ?>
+    <!-- ERROR -->
+    <?php if ($this->session->flashdata('error')): ?>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          Swal.fire(
+            'ERROR',
+            'Jugador eliminado exitosamente',
+            'error'
+          )
+        });
+      </script>
+    <?php endif; ?>
   </head>
   <body>
     <div class="text-center">
@@ -81,7 +118,7 @@
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
-        
+
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>

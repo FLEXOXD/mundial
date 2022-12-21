@@ -28,18 +28,20 @@ class Selecciones extends CI_Controller {
 		);
 		print_r($datosNuevaSeleccion);
 		if ($this->seleccion->insertar($datosNuevaSeleccion)) {
-			redirect('selecciones/index');
-		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('confirmacion','Seleccion insertada exitosamente');
+	}else{
+			$this->session->set_flashdata('error','Error al insertar, verifique e intente de nuevo');
 		}
+		redirect('selecciones/index');
 	}
 	//Función para eliminar selecciones
 	public function borrar($id_selec_md){
 		if ($this->seleccion->eliminarPorId($id_selec_md)){
-			redirect('selecciones/index');
-		} else {
-			echo "Error al eliminar :(";
+			$this->session->set_flashdata('confirmacion','Seleccion ELIMINADA exitosamente');
+	} else {
+			$this->session->set_flashdata('error','Error al eliminar, verifique e intente de nuevo');
 		}
+		redirect('selecciones/index');
 	}
 	//Función para renderizar formulario de actualización
 	public function actualizar($id){

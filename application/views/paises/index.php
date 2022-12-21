@@ -9,7 +9,7 @@
 </legend>
 <hr>
 <?php if ($listadoPaises): ?>
-  <table class="table table-striped table-bordered table-hover">
+  <table id="tbl-paises" class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
         <th class="text-center">ID</th>
@@ -34,3 +34,4 @@
 <?php else: ?>
   <h3 class="text-center"><b>No existen paises</b></h3>
 <?php endif; ?>
+<script type="text/javascript"> $("#tbl-paises").DataTable(); </script>
