@@ -58,9 +58,11 @@ class Paises extends CI_Controller {
 		);
 		$id=$this->input->post("id_pa_md");
 		if ($this->pais->actualizar($id,$datosPaisEditado)) {
-			redirect('paises/index');
+			$this->session->set_flashdata('confirmacion','Pais ACTUALIZADO exitosamente');
 		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('error','Error al actualizar, verifique e intente de nuevo');
 		}
+		redirect('paises/index');
+		echo "<h1>ERROR</h1>";
 	}
 }//cierre de la clase NO BORRAR

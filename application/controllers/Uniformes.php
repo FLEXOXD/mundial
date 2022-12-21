@@ -77,9 +77,11 @@ class Uniformes extends CI_Controller {
 		);
 		$id=$this->input->post("coduni_md");
 		if ($this->uniforme->actualizar($id,$datosUniformeEditado)) {
-			redirect('uniformes/index');
+			$this->session->set_flashdata('confirmacion','Uniforme ACTUALIZADO exitosamente');
 		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('error','Error al actualizar, verifique e intente de nuevo');
 		}
+		redirect('uniformes/index');
+		echo "<h1>ERROR</h1>";
 	}
 }//cierre de la clase NO BORRAR

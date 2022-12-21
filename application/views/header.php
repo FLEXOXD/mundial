@@ -32,7 +32,7 @@
         $(document).ready(function(){
           Swal.fire(
             'CONFORMACIÓN',
-            'Jugador guardado exitosamente',
+            '<?php echo $this->session->flashdata('confirmacion'); ?>',
             'success'
           )
         });
@@ -44,7 +44,7 @@
         $(document).ready(function(){
           Swal.fire(
             'ERROR',
-            'Jugador eliminado exitosamente',
+            '<?php echo $this->session->flashdata('error'); ?>',
             'error'
           )
         });

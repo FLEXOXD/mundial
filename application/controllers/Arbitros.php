@@ -59,9 +59,11 @@ class Arbitros extends CI_Controller {
 		);
 		$id=$this->input->post("codarb_md");
 		if ($this->arbitro->actualizar($id,$datosArbitroEditado)) {
-			redirect('arbitros/index');
+			$this->session->set_flashdata('confirmacion','Arbitro ACTUALIZADO exitosamente');
 		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('error','Error al actualizar, verifique e intente de nuevo');
 		}
+		redirect('arbitros/index');
+		echo "<h1>ERROR</h1>";
 	}
 }//cierre de la clase NO BORRAR

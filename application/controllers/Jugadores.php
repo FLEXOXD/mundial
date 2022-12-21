@@ -81,9 +81,11 @@ class Jugadores extends CI_Controller {
 		);
 		$id=$this->input->post("id_jug_md");
 		if ($this->jugador->actualizar($id,$datosJugadorEditado)) {
-			redirect('jugadores/index');
+			$this->session->set_flashdata('confirmacion','Jugador ACTUALIZADO exitosamente');
 		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('error','Error al actualizar, verifique e intente de nuevo');
 		}
+		redirect('jugadores/index');
+		echo "<h1>ERROR</h1>";
 	}
 }//cierre de la clase NO BORRAR

@@ -60,9 +60,11 @@ class Estadios extends CI_Controller {
 		);
 		$id=$this->input->post("codest_md");
 		if ($this->estadio->actualizar($id,$datosEstadioEditado)) {
-			redirect('estadios/index');
+			$this->session->set_flashdata('confirmacion','Estadio ACTUALIZADO exitosamente');	
 		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('error','Error al actualizar, verifique e intente de nuevo');
 		}
+		redirect('estadios/index');
+		echo "<h1>ERROR</h1>";
 	}
 }//cierre de la clase NO BORRAR

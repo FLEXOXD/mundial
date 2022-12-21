@@ -80,9 +80,11 @@ class Directores extends CI_Controller {
 		);
 		$id=$this->input->post("id_dir_md");
 		if ($this->director->actualizar($id,$datosDirectorEditado)) {
-			redirect('directores/index');
+			$this->session->set_flashdata('confirmacion','Director ACTUALIZADO exitosamente');
 		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('error','Error al actualizar, verifique e intente de nuevo');
 		}
+		redirect('directores/index');
+		echo "<h1>ERROR</h1>";
 	}
 }//cierre de la clase NO BORRAR

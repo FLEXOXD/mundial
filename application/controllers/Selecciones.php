@@ -58,9 +58,11 @@ class Selecciones extends CI_Controller {
 		);
 		$id=$this->input->post("id_selec_md");
 		if ($this->seleccion->actualizar($id,$datosSeleccionEditada)) {
-			redirect('selecciones/index');
+			$this->session->set_flashdata('confirmacion','Seleccion ACTUALIZADA exitosamente');
 		}else{
-			echo "<h1>ERROR</h1>";
+			$this->session->set_flashdata('error','Error al actualizar, verifique e intente de nuevo');
 		}
+		redirect('selecciones/index');
+		echo "<h1>ERROR</h1>";
 	}
 }//cierre de la clase NO BORRAR
