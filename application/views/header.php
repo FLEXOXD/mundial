@@ -111,6 +111,24 @@
               <li><a href="<?php echo site_url('directores/nuevo');?>">Nuevo</a></li>
             </ul>
           </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                  aria-expanded="false">Uniformes<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="<?php echo site_url('uniformes/index');?>">Listado</a></li>
+              <li><a href="<?php echo site_url('uniformes/nuevo');?>">Nuevo</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                  aria-expanded="false">Arbitros<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="<?php echo site_url('arbitros/index');?>">Listado</a></li>
+              <li><a href="<?php echo site_url('arbitros/nuevo');?>">Nuevo</a></li>
+            </ul>
+          </li>
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
